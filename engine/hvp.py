@@ -13,5 +13,42 @@ import string
 import random
 
 
-def gen_hvp():
-    print("I am the future, Flash!")
+def gen_hvp(qty, p_len, sym_en, char_en, num_en):
+    
+    print("\nFiring up the Advanced Password Generator...\n")
+    
+    # POPULATE THE BASE CHARACTERS
+    if char_en == "Yes":
+        ltr = string.ascii_letters
+    else:
+        ltr = None
+    
+    if num_en == "Yes":
+        dig = string.digits
+    else:
+        dig = None
+    
+    if sym_en == "Yes":
+        sym = string.punctuation
+    else:
+        sym = None
+
+    mixer = ltr + dig + sym
+    pwd_list = []
+
+    print("******* YOUR PASSWORDS, SERVED HOT! ********\n")
+
+    for times in range(qty):
+        # GET BREWING!
+        for times in range(random.randint(6, 9)):
+            pwd = "".join(map(str, random.sample(mixer, p_len)))
+            pwd_list.append(pwd)
+        
+    if len(pwd_list) > qty:
+        choose_indices = random.sample(range(0, len(pwd_list)), qty)
+
+    print("\n\n".join(pwd_list[choose_indices[i]] for i in range(len(choose_indices))))
+    print("\n")
+
+    # ACK SUCCESSFUL COMPLETION
+    return 0

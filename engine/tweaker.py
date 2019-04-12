@@ -37,7 +37,9 @@ def pass_customizer(qty, length, sym_en, char_en, num_en):
     print("Quantity =", qty, "; Length =", length, "; Symbols enabled :", sym_en, "; Characters enabled :", char_en, "; Numbers enabled :", num_en, ".")
     
     # CALL THE HIGH VALUE PASSWORD GENERATOR
-    gen_hvp()
+    err_status = gen_hvp(qty, length, sym_en, char_en, num_en)
+    if err_status != 0:
+        print("Hey! Seems something went off the rails. Maybe Try Again?")
 
     # RETURN ERROR_CODE
     return 0
