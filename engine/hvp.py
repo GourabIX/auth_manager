@@ -21,17 +21,17 @@ def gen_hvp(qty, p_len, sym_en, char_en, num_en):
     if char_en == "Yes":
         ltr = string.ascii_letters
     else:
-        ltr = None
+        ltr = ""
     
     if num_en == "Yes":
         dig = string.digits
     else:
-        dig = None
+        dig = ""
     
     if sym_en == "Yes":
         sym = string.punctuation
     else:
-        sym = None
+        sym = ""
 
     mixer = ltr + dig + sym
     pwd_list = []
@@ -47,6 +47,7 @@ def gen_hvp(qty, p_len, sym_en, char_en, num_en):
     if len(pwd_list) > qty:
         choose_indices = random.sample(range(0, len(pwd_list)), qty)
 
+    random.shuffle(pwd_list)
     print("\n\n".join(pwd_list[choose_indices[i]] for i in range(len(choose_indices))))
     print("\n")
 

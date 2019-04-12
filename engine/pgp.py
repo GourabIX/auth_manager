@@ -30,8 +30,10 @@ def gen_pgp():
 
     # THE PASSWORD THAT LIVED : PASS POTTER
     chosen = random.randint(0, len(pwd_list))
+    random.shuffle(pwd_list)
     print("******* YOUR PASSWORD, SERVED HOT! ********")
+    print("\n")
     print(pwd_list[chosen])
-    print("\n\n")
+    print("\n")
 
     return 0
