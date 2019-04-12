@@ -8,12 +8,13 @@
 # ============================================================================================================================================= #
 
 
-# GRAB PASSBOT'S FRIENDS
+# GRAB AUTH_MANAGER'S FRIENDS
 import string
 import random
+import csv
+from imprint import *
 
-
-def gen_hvp(qty, p_len, sym_en, char_en, num_en):
+def gen_hvp(qty, p_len, sym_en, char_en, num_en, site):
     
     print("\nEngaging Advanced Security System Thrusters...\n")
     
@@ -57,8 +58,15 @@ def gen_hvp(qty, p_len, sym_en, char_en, num_en):
         choose_indices = random.sample(range(0, len(pwd_list)), qty)
 
     random.shuffle(pwd_list)
-    print("\n\n".join(pwd_list[choose_indices[i]] for i in range(len(choose_indices))))
-    print("\n")
+    # print("\n\n".join(pwd_list[choose_indices[i]] for i in range(len(choose_indices))))
+    pwd_list = list(map(str, (pwd_list[choose_indices[i]] for i in range(len(choose_indices)))))
+    for pass_wd in pwd_list:
+        print(pass_wd, "\n")
+    
+    # DOES MASTER WANT TO SAVE AND ENCRYPT THIS PASSWORD?
+    user_pref = str(input("Do you want to save these passwords? \nIt will be stored securely and will be lost forever if you forget your Master Password. [Y / N] "))
+    user_pref = user_pref.lower()
+    write_pwd_hvp(user_pref, site, pwd_list)
 
     # ACK SUCCESSFUL COMPLETION
     return 0

@@ -8,12 +8,14 @@
 # ============================================================================================================================================= #
 
 
-# GRAB PASSBOT'S FRIENDS
+# GRAB AUTH_MANAGER'S FRIENDS
 import string
 import random
+import csv
+from imprint import *
 
 # GENERATE THE PRETTY GOOD PASSWORD
-def gen_pgp():
+def gen_pgp(site):
     
     # POPULATE THE BASE CHARACTERS
     ltr = string.ascii_letters
@@ -33,7 +35,13 @@ def gen_pgp():
     random.shuffle(pwd_list)
     print("******* YOUR PASSWORD, SERVED HOT! ********")
     print("\n")
-    print(pwd_list[chosen])
+    pgp = pwd_list[chosen]
+    print(pgp)
     print("\n")
+
+    # DOES MASTER WANT TO SAVE AND ENCRYPT THIS PASSWORD?
+    user_pref = str(input("Do you want to save this password? \nIt will be stored securely and will be lost forever if you forget your Master Password. [Y / N] "))
+    user_pref = user_pref.lower()
+    write_pwd_pgp(user_pref, site, pgp)
 
     return 0

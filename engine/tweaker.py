@@ -12,9 +12,10 @@
 import string
 import random
 from hvp import gen_hvp
+from secure import *
 
 # MODULE DEFINITION
-def pass_customizer(qty, length, sym_en, char_en, num_en):
+def pass_customizer(qty, length, sym_en, char_en, num_en, site):
 
     # DECIDE CONFIGURATIONS AND HUMANIZE
     if sym_en == 1:
@@ -37,9 +38,12 @@ def pass_customizer(qty, length, sym_en, char_en, num_en):
     print("Quantity =", qty, "; Length =", length, "; Symbols enabled :", sym_en, "; Characters enabled :", char_en, "; Numbers enabled :", num_en, ".")
     
     # CALL THE HIGH VALUE PASSWORD GENERATOR
-    err_status = gen_hvp(qty, length, sym_en, char_en, num_en)
+    # TODO : DECRYPT FILE FIRST
+    err_status = gen_hvp(qty, length, sym_en, char_en, num_en, site)
     if err_status != 0:
         print("Hey! Seems something went off the rails. Maybe Try Again?")
-
+    entry_point(49)
+    # TODO : DELETE CSV FILE FROM DISK
+    
     # RETURN ERROR_CODE
     return 0
