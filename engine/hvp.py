@@ -15,9 +15,10 @@ import random
 
 def gen_hvp(qty, p_len, sym_en, char_en, num_en):
     
-    print("\nFiring up the Advanced Password Generator...\n")
+    print("\nEngaging Advanced Security System Thrusters...\n")
     
     # POPULATE THE BASE CHARACTERS
+    otp_flag = 0
     if char_en == "Yes":
         ltr = string.ascii_letters
     else:
@@ -36,7 +37,15 @@ def gen_hvp(qty, p_len, sym_en, char_en, num_en):
     mixer = ltr + dig + sym
     pwd_list = []
 
-    print("******* YOUR PASSWORDS, SERVED HOT! ********\n")
+    if ltr == "" and sym == "" and dig != "":
+        p_len = 6
+        print("Hmm... Your selection indicates that you want to generate numeric only OTPs. Granted!")
+        print("******* YOUR OTPs, SERVED HOT! *******\n\n")                                                 # TODO : MAYBE ADD MORE CUSTOMIZABILITY OPTIONS LATER?
+                                                                                                            # TODO : ALLOW OTP LENGTH TO BE CUSTOMIZED
+        otp_flag = 1
+
+    if otp_flag == 0:
+        print("******* YOUR PASSWORDS, SERVED HOT! *******\n")
 
     for times in range(qty):
         # GET BREWING!
