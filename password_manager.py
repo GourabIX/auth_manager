@@ -20,7 +20,7 @@ from tweaker import pass_customizer
 # DRESS FOR THE JOB YOU WANT!
 print("| -------------------------------------------------------------------- |")
 print("|                       Welcome to Auth_Manager!                       |")
-print("|                               v 0.0.1                                |")
+print("|                               v 0.1.0                                |")
 print("| -------------------------------------------------------------------- |")
 
 # THE MAIN FUNCTION, LITERALLY
