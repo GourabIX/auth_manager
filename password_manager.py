@@ -24,37 +24,38 @@ from secure import *
 # DRESS FOR THE JOB YOU WANT!
 print("                 | -------------------------------------------------------------------- |")
 print("                 |                       Welcome to Auth_Manager!                       |")
-print("                 |                               v 0.2.1                                |")
+print("                 |                               v 0.2.5                                |")
 print("                 | -------------------------------------------------------------------- |")
 print("\n")
 
 # THE MAIN FUNCTION, LITERALLY
 if __name__ == '__main__':
 
-    splash = int(input("Hiya There! Enter 0 to generate passwords or 9 to decrypt and access your password vault : "))
+    splash = int(input("Hi There! Enter 0 to generate passwords or 9 to decrypt and access your password vault : "))
 
     if splash == 0:
-        site = str(input("\nEnter the URL for which you want to generate your password: "))
+        acc_id = str(input("\nEnter the account ID for which you want to generate your password: "))
+        site = str(input("Enter the URL of the website where this login credential is required: "))
         adv_en = str(input("Now, do you want to enable advanced mode [Y / N] ? "))
         adv_en = adv_en.lower()
 
         if adv_en == "y":
             # GET THE CONFIG FROM USER
             print("In the next line, enter your password complexity preferences, separated by spaces. ")
-            print("Usage : <how_many> <password_length> <symbols_enabled> <characters_enabled> <numerics_enabled> ")
-            print("If you want to generate OTPs, enter only <how_many> and <numerics_enabled> fields, and fill the rest with 0.")
-            print("Sample entry [1 = enable, 0 = disable] : 6 24 1 1 0")
-            qty, length, sym_en, char_en, num_en = map(int, input().split(' '))
+            print("Usage : <password_length> <symbols_enabled> <characters_enabled> <numerics_enabled> ")
+            print("If you want to generate OTPs, enter only the <numerics_enabled> field, and fill the rest with 0.")
+            print("Sample entry [1 = enable, 0 = disable] : 24 1 1 0")
+            length, sym_en, char_en, num_en = map(int, input().split(' '))
             print("Okay... Got your password customisation preferences!\n")
             
             # CALL THE PASSWORD CUSTOMIZER
             print("Brewing some strong Password Potion now...")
-            err_status = pass_customizer(qty, length, sym_en, char_en, num_en, site)
+            err_status = pass_customizer(length, sym_en, char_en, num_en, site, acc_id)
             if err_status != 0:
                 print("Something went wrong. Sorry for the hiccup. Do Try again!")
 
         elif adv_en == "n":
-            err_status = gen_pgp(site)
+            err_status = gen_pgp(site, acc_id)
             if err_status != 0:
                 print("Something went wrong. Sorry for the hiccup. Do Try again!")
             
