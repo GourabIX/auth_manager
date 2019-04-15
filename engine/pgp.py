@@ -15,7 +15,7 @@ import csv
 from imprint import *
 
 # GENERATE THE PRETTY GOOD PASSWORD
-def gen_pgp(site):
+def gen_pgp(site, acc_id):
     
     # POPULATE THE BASE CHARACTERS
     ltr = string.ascii_letters
@@ -42,6 +42,6 @@ def gen_pgp(site):
     # DOES MASTER WANT TO SAVE AND ENCRYPT THIS PASSWORD?
     user_pref = str(input("Do you want to save this password? \nIt will be stored securely and will be lost forever if you forget your Master Password. [Y / N] "))
     user_pref = user_pref.lower()
-    write_pwd_pgp(user_pref, site, pgp)
+    write_pwd(user_pref, site, acc_id, pgp)
 
     return 0

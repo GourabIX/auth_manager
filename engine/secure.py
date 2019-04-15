@@ -10,6 +10,7 @@
 
 # GRAB AUTH_MANAGER'S FRIENDS
 import pyAesCrypt
+import os
 
 # THE FUNDAMENTALS
 buff_size = 64 * 1024
@@ -29,17 +30,24 @@ secure_key = "@thanosdidnothingwrong45"
 
 # GET THE ENCRYPTION RUNNING
 def encrypt_file():
-    print("Encrypting your data...")
-    pyAesCrypt.encryptFile("engine/say_shazam.csv", "engine/6ZFOjBhPwG.csv.aes", secure_key, buff_size)
-    print("Your passwords have been securely encrypted. \nPROTIP :: KEEP THAT MASTER PASSWORD IN MIND!")
+    
+    if os.path.exists("./engine/say_shazam.csv"):
+        print("Encrypting your data...")
+        pyAesCrypt.encryptFile("engine/say_shazam.csv", "engine/6ZFOjBhPwG.csv.aes", secure_key, buff_size)
+        print("Your passwords have been securely encrypted. \nPROTIP :: KEEP THAT MASTER PASSWORD IN MIND!")
+    else:
+        pass
 
 # GET THE DECRYPTION RUNNING
 def decrypt_file():
     user_key = str(input("Enter your Master Password to access your Password Vault : "))
     if user_key == secure_key:
-        print("Decrypting your data...")
-        pyAesCrypt.decryptFile("engine/6ZFOjBhPwG.csv.aes", "engine/say_shazam.csv", secure_key, buff_size)
-        print("Your passwords have been securely decrypted. \nPROTIP :: KEEP THAT MASTER PASSWORD IN MIND!")
+        if os.path.exists("./engine/6ZFOjBhPwG.csv.aes"):
+            print("Decrypting your data...")
+            pyAesCrypt.decryptFile("engine/6ZFOjBhPwG.csv.aes", "engine/say_shazam.csv", secure_key, buff_size)
+            print("Your passwords have been securely decrypted. \nPROTIP :: KEEP THAT MASTER PASSWORD IN MIND!")
+        else:
+            pass
     else:
         print("THE PASSWORD THAT YOU ENTERED IS INVALID. Please try again.")
         print("The password that was just generated has NOT been added to your vault.")

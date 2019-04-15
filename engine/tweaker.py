@@ -17,7 +17,7 @@ from imprint import *
 import os
 
 # MODULE DEFINITION
-def pass_customizer(qty, length, sym_en, char_en, num_en, site):
+def pass_customizer(length, sym_en, char_en, num_en, site, acc_id):
 
     # DECIDE CONFIGURATIONS AND HUMANIZE
     if sym_en == 1:
@@ -37,10 +37,10 @@ def pass_customizer(qty, length, sym_en, char_en, num_en, site):
 
     # FEEDBACK SELECTED PASSWORD GENERATOR CONFIGURATION
     print("Password params selected >>")
-    print("Quantity =", qty, "; Length =", length, "; Symbols enabled :", sym_en, "; Characters enabled :", char_en, "; Numbers enabled :", num_en, ".")
+    print("Length =", length, "; Symbols enabled :", sym_en, "; Characters enabled :", char_en, "; Numbers enabled :", num_en, ".")
     
     # CALL THE HIGH VALUE PASSWORD GENERATOR >>>
-    err_status = gen_hvp(qty, length, sym_en, char_en, num_en, site)
+    err_status = gen_hvp(length, sym_en, char_en, num_en, site, acc_id)
     if err_status != 0:
         print("Hey! Seems something went off the rails. Maybe Try Again?")
 
