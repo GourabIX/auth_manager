@@ -10,16 +10,20 @@
 
 # GRAB AUTH_MANAGER'S FRIENDS
 import csv
+from secure import *
+import os
 
 # MDOULE DEFINITIONS TO WRITE DATA TO CSV FILE
 def write_pwd_hvp(user_pref, site, pwd_list):
 
     if user_pref == "y":
+        entry_point(69)                                                                 # DECRYPT FILE FIRST
         with open("engine/say_shazam.csv", "a") as secret_csv:
             csv_wr = csv.writer(secret_csv)
             csv_wr.writerows([[site, *pwd_list]])
         secret_csv.close()
         print("Data securely stored and saved. Only YOU know how to access it.")
+        entry_point(49)                                                                 # ENCRYPT THE UPDATED FILE
 
     elif user_pref == "n":
         print("As you wish. But remember that the passwords will get lost forever the moment you close the command console.")
@@ -30,14 +34,37 @@ def write_pwd_hvp(user_pref, site, pwd_list):
 def write_pwd_pgp(user_pref, site, pgp):
 
     if user_pref == "y":
+        entry_point(69)                                                                 # DECRYPT FILE FIRST
         with open("engine/say_shazam.csv", "a") as secret_csv:
             csv_wr = csv.writer(secret_csv)
             csv_wr.writerows([[site, pgp]])
         secret_csv.close()
         print("Data securely stored and saved. Only YOU know how to access it.")
+        entry_point(49)                                                                 # ENCRYPT THE UPDATED FILE
 
     elif user_pref == "n":
         print("As you wish. But remember that this password will get lost forever the moment you close the command console.")
     
     else:
         print("You pressed a wrong key. You know what happens now.")            # IMITTATES DUOLINGO MEME
+
+def purger():
+
+    # CLEAN UP REDUNDANT DATA
+    if os.path.exists("./engine/say_shazam.csv"):
+        os.remove("./engine/say_shazam.csv")
+
+def open_vault():
+    with open("engine/say_shazam.csv", 'r') as secret_csv:
+        csv_rdr = csv.reader(secret_csv)
+        for row in csv_rdr:
+            if row != []:
+                print("|---------------------------------------------------------------------------------------|")
+                account_id, password = row[0], row[1]
+                print(" Account : ", str(account_id), "\t\t\t Password : ", str(password))
+    print("|---------------------------------------------------------------------------------------|")
+    secret_csv.close()
+
+def exit_action():                                                  # INITIATES CLEANUP IF EXIT IS ABRUPT
+    print("Cleaning up Redundant data before exiting...")
+    purger()
