@@ -1,10 +1,10 @@
 # ================================================================================================================================================================= #
-# PassMaester IS A PASSWORD GENERATOR AND MANAGER HAS BEEN BREWED WITH A LOT OF LOVE BY GOURAB SARKAR. IT USES A COMPLEX MIX OF STRONG                             #
+# PassMaester IS A PASSWORD GENERATOR AND MANAGER HAS BEEN BREWED WITH A LOT OF LOVE BY GOURAB SARKAR. IT USES A COMPLEX MIX OF STRONG                              #
 # POTIONS THAT GENERATE ALOHOMORA - SAFE (CRYPTOGRAPHICALLY SECURE) PASSWORDS AND STORES THEM FOR YOU.                                                              #                                  #
 #                                                                                                                                                                   #
 # THIS PROGRAM ALONG WITH IT'S COMPLETE SOURCE CODE IS FREE TO USE, MODIFY AND DISTRIBUTE. I WOULD ONLY REQUEST YOU, THE USER, TO                                   # 
 # INCLUDE A CREDIT TO MY NAME WHEN YOU DO:                                                                                                                          #
-# MADE WITH LOVE BY GOURAB SARKAR (https://github.com/GourabIX/auth_manager)                                                                                        #
+# MADE WITH LOVE BY GOURAB SARKAR (https://github.com/GourabIX)                                                                                                     #
 # ================================================================================================================================================================= #
 
 
@@ -65,7 +65,6 @@ if __name__ == '__main__':
             print("Hmm... You entered a wrong argument. Please, try again! :)")
     
     elif splash == 9:
-        # TODO : Deal with Decryption in secure.py
         entry_point(69)
         open_vault()
         exit_action()
