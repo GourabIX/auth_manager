@@ -9,4 +9,4 @@ REM # INCLUDE A CREDIT TO MY NAME WHEN YOU DO:                                  
 REM # MADE WITH LOVE BY GOURAB SARKAR (https://github.com/GourabIX)                                                                                                     #
 REM # ================================================================================================================================================================= #
 
-start cmd /k "C:\Users\%username%\AppData\Local\Programs\Python\Python37-32\python.exe" PassMaester.py
+start cmd /k python3 PassMaester.py
