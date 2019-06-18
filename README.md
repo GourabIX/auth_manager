@@ -1,2 +1,2 @@
-# auth_manager
-The Auth_Manager : A password manager that generates cryptographically secure passwords using a special in-house algorithm, and stores and manages them for you. One Password to rule them all.
+# PassMaester (previously auth_manager)
+PassMaester is a password manager that generates cryptographically secure passwords using a special in-house algorithm, and securely stores and manages them for you.
