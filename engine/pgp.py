@@ -8,7 +8,7 @@
 # ============================================================================================================================================= #
 
 
-# GRAB AUTH_MANAGER'S FRIENDS
+# GRAB PassMaester's FRIENDS
 import string
 import random
 import csv

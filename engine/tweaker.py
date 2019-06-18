@@ -8,7 +8,7 @@
 # ============================================================================================================================================= #
 
 
-# GRAB PASSBOT'S FRIENDS
+# GRAB PassMaester's FRIENDS
 import string
 import random
 from hvp import gen_hvp
@@ -42,7 +42,7 @@ def pass_customizer(length, sym_en, char_en, num_en, site, acc_id):
     # CALL THE HIGH VALUE PASSWORD GENERATOR >>>
     err_status = gen_hvp(length, sym_en, char_en, num_en, site, acc_id)
     if err_status != 0:
-        print("Hey! Seems something went off the rails. Maybe Try Again?")
+        print("Hey! Seems something went off the rails. Maybe try again?")
 
     purger()                # PURGE ALL REDUNDANT DATA FILES
 

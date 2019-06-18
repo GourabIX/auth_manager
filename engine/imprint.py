@@ -1,5 +1,5 @@
 # ================================================================================================================================================================= #
-# AUTH_MANAGER IS A PASSWORD GENERATOR AND MANAGER HAS BEEN BREWED WITH A LOT OF LOVE BY GOURAB SARKAR. IT USES A COMPLEX MIX OF STRONG POTIONS                     #
+# PassMaester IS A PASSWORD GENERATOR AND MANAGER HAS BEEN BREWED WITH A LOT OF LOVE BY GOURAB SARKAR. IT USES A COMPLEX MIX OF STRONG POTIONS                     #
 # THAT GENERATE ALOHOMORA - SAFE (CRYPTOGRAPHICALLY SECURE) PASSWORDS AND STORES THEM FOR YOU.                                                                      #                                  #
 #                                                                                                                                                                   #
 # THIS PROGRAM ALONG WITH IT'S COMPLETE SOURCE CODE IS FREE TO USE, MODIFY AND DISTRIBUTE. I WOULD ONLY REQUEST YOU, THE USER, TO                                   # 
@@ -8,12 +8,12 @@
 # ================================================================================================================================================================= #
 
 
-# GRAB AUTH_MANAGER'S FRIENDS
+# GRAB PassMaester's FRIENDS
 import csv
 from secure import *
 import os
 
-# MDOULE DEFINITIONS TO WRITE DATA TO CSV FILE
+# MODULE DEFINITION TO WRITE DATA TO CSV FILE
 def write_pwd(user_pref, site, acc_id, pass_wd):
 
     if user_pref == "y":
@@ -29,7 +29,7 @@ def write_pwd(user_pref, site, acc_id, pass_wd):
         print("As you wish. But remember that the passwords will get lost forever the moment you close the command console.")
     
     else:
-        print("You pressed a wrong key. You know what happens now.")            # IMITTATES DUOLINGO MEME
+        print("You pressed a wrong key. Please try again.")
 
 def purger():
 
