@@ -9,4 +9,6 @@ REM # INCLUDE A CREDIT TO MY NAME WHEN YOU DO:                                  
 REM # MADE WITH LOVE BY GOURAB SARKAR (https://github.com/GourabIX)                                                                                                     #
 REM # ================================================================================================================================================================= #
 
+pip install pyAesCrypt
+
 start cmd /k python3 PassMaester.py
