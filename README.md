@@ -10,4 +10,4 @@ PassMaester is a password manager that generates cryptographically secure passwo
 **Dependencies:**
 * pyAesCrypt from PyPI
 
-Please install the mentioned dependency in your Python installation. Instructions on how to install can be found at this link: https://pypi.org/project/pyAesCrypt/
+Running the launcher will automatically install (or update, if an outdated version is already installed) the dependency required. If you want to learn more about pyAesCrypt or want to verify if you are running the latest version of pyAesCrypt, you can visit this link: https://pypi.org/project/pyAesCrypt/.
