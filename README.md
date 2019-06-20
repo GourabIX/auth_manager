@@ -6,6 +6,7 @@ PassMaester is a password manager that generates cryptographically secure passwo
 * Fixed user password entry security vulnerability. [Fixed - June 18, 2019]
 * Fixed (rare) crashes that used to occur on PassMaester's first run. [Fixed - June 18, 2019]
 * Fixed PassMaester not starting issue due to incorrect username. [Fixed - June 18, 2019]
+* Enabled auto-update and auto installation of pyAesCrypt. [Complete - June 20, 2019]
 
 **Dependencies:**
 * pyAesCrypt from PyPI
