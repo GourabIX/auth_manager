@@ -11,4 +11,4 @@ REM # ==========================================================================
 
 pip install pyAesCrypt
 
-start cmd /k python3 PassMaester.py
+start cmd /k python PassMaester.py
